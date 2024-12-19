@@ -1,0 +1,19 @@
+{
+  "name": "screenshot-control-by-akshay",
+  "version": "1.0.2",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"No tests yet!\" && exit 0"
+  },
+  "keywords": [
+    "react-native",
+    "screenshot",
+    "disable-screenshot"
+  ],
+  "author": "Akshay Khandade",
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": ">=0.60.0"
+  }
+}
