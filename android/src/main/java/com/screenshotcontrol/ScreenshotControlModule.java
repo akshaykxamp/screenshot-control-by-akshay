@@ -23,7 +23,12 @@ public class ScreenshotControlModule extends ReactContextBaseJavaModule {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Activity activity = getCurrentActivity();
             if (activity != null) {
-                activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+                    }
+                });
             }
         }
     }
@@ -33,7 +38,12 @@ public class ScreenshotControlModule extends ReactContextBaseJavaModule {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Activity activity = getCurrentActivity();
             if (activity != null) {
-                activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_SECURE);
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_SECURE);
+                    }
+                });
             }
         }
     }
